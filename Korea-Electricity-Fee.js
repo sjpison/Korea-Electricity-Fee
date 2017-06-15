@@ -15,7 +15,7 @@ Developed by: Pison	(codemission.org)
                 var property;
                 for (property in properties) {
                     if (properties.hasOwnProperty(property)) {
-                    source[property] = properties[property];
+                        source[property] = properties[property];
                     }
                 }
                 return source;
@@ -88,6 +88,7 @@ Developed by: Pison	(codemission.org)
         }, this);
 
         // 현재 요금에서 가장 가까운 값 추출
+        // 소스 개선이 필요해 보이지만, 최근 컴퓨터들의 연산능력을 고려하면 충분히 빠름
         var tmp_detail = 0;
         while(amount_list.length>0) {
             tmp_detail = amount_list.pop();
