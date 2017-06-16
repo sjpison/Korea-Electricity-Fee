@@ -1,5 +1,6 @@
 /**
 Korea-Electricity-Fee.js
+@Version 0.1.0
 Developed by: Pison	(codemission.org)
 **/
 
