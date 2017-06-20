@@ -8,7 +8,7 @@ Developed by: Pison	(codemission.org)
     /* ElectricityFee */
     this.ElectricityFee = function() {
         var defaults = {
-            "type" : "kr-residential-low" // 가정용 저압
+            "type" : "kr-residential-low" // 가정용 저압, 
         };
 
         if (arguments[0] && typeof arguments[0] === "object") {
@@ -31,6 +31,12 @@ Developed by: Pison	(codemission.org)
                 interval:[0, 200, 400],
                 basic_section:[910, 1600, 7300],
                 usage_section:[93.3, 187.9, 280.6]
+            },
+            'kr-residential-high' : {
+                // [0~ / 200~ / 400~] kWh
+                interval:[0, 200, 400],
+                basic_section:[730, 1260, 6060],
+                usage_section:[78.3, 147.3, 215.6]
             }
         }
     }
@@ -50,7 +56,7 @@ Developed by: Pison	(codemission.org)
             foundation_fund:0,
             amount:0
         };
-        if(this.options.type=="kr-residential-low") {
+        if(this.options.type=="kr-residential-low" || this.options.type=="kr-residential-high") {
             for(var i=0; i<elec_con.interval.length;i++) {
 
                 // 사용량이 현재 구간을 초과한 경우

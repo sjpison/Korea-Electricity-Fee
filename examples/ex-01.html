@@ -12,11 +12,22 @@
         <p>320Kwh 사용시 요금 : <span id="usage-320"></span></p>
         <p>₩ 50,000 청구시 사용량 : <span id="krw-50000"></span></p>
 
-        <script>
-        var ef = new ElectricityFee();
 
+        <h2>주택용 전력(고압)</h2>
+
+        <p>320Kwh 사용시 요금 : <span id="usage-320-high"></span></p>
+        <p>₩ 50,000 청구시 사용량 : <span id="krw-50000-high"></span></p>
+
+        <script>
+        // low
+        var ef = new ElectricityFee();
         document.getElementById('usage-320').innerHTML = '₩' + ef.getFeeDetail(320).amount;
         document.getElementById('krw-50000').innerHTML = ef.getUsageByAmount(50000).usage + 'kwh';
+        
+        // high
+        var ef = new ElectricityFee({type:'kr-residential-high'});
+        document.getElementById('usage-320-high').innerHTML = '₩' + ef.getFeeDetail(320).amount;
+        document.getElementById('krw-50000-high').innerHTML = ef.getUsageByAmount(50000).usage + 'kwh';
         </script>
     </body>
 </html>
