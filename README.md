@@ -23,6 +23,7 @@
 <script src="Korea-Electricity-Fee.js"></script>
 <script>
 var ef = new ElectricityFee();
+// var ef = new ElectricityFee({type:'kr-residential-high'}); // 가정용고압
 
 // 320khw 사용시 요금을 반환
 ef.getFeeDetail(320).amount; // 48660
